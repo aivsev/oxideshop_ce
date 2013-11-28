@@ -146,7 +146,7 @@ class Article_Main extends oxAdminDetails
             $aParams['oxarticles__oxvat'] = null;
         }
 
-        // varianthandling
+        // variant handling
         $soxparentId = $oConfig->getRequestParameter( "oxparentid");
         if ( isset( $soxparentId) && $soxparentId && $soxparentId != "-1") {
             $aParams['oxarticles__oxparentid'] = $soxparentId;
@@ -175,7 +175,7 @@ class Article_Main extends oxAdminDetails
             }
         }
 
-        //article number handling, warns for artnum dublicates
+        //article number handling, warns for artnum duplicates
         if ( isset( $aParams['oxarticles__oxartnum']) && strlen($aParams['oxarticles__oxartnum']) > 0 &&
             $oConfig->getConfigParam( 'blWarnOnSameArtNums' ) &&
             $oArticle->oxarticles__oxartnum->value !=  $aParams['oxarticles__oxartnum']
@@ -220,7 +220,7 @@ class Article_Main extends oxAdminDetails
 
         $oArticle->setLanguage(0);
 
-        //triming spaces from article title (M:876)
+        //trimming spaces from article title (M:876)
         if (isset($aParams['oxarticles__oxtitle'])) {
             $aParams['oxarticles__oxtitle'] = trim( $aParams['oxarticles__oxtitle'] );
         }
